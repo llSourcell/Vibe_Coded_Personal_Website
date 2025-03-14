@@ -1,5 +1,5 @@
 {
-  "root": "out",
+  "root": ".next",
   "clean_urls": true,
   "https_only": true,
   "headers": {
@@ -7,9 +7,16 @@
       "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
     }
   },
+  "routes": {
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/": {
+      "origin": "${NEXT_PUBLIC_URL}"
+    }
+  },
   "redirects": {
     "/": {
-      "host": "sirajraval.com",
       "url": "https://www.sirajraval.com/",
       "status": 301
     }
