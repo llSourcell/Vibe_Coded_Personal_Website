@@ -68,9 +68,9 @@ const Hero: React.FC<HeroProps> = ({ className = '' }) => {
           <div className="text-center lg:text-left lg:max-w-2xl">
             <h1
               ref={titleRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 glow-text"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 glow-text pt-16 md:pt-0"
             >
-              <span className="text-secondary">AI</span> Educator & Entrepreneur
+              <span className="text-secondary">AI</span> Educator & <span className="md:inline block">Entrepreneur</span>
             </h1>
             <p
               ref={subtitleRef}
