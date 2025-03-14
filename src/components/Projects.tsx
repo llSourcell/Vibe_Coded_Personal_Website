@@ -4,137 +4,84 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import ProjectCard from './ProjectCard';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  tags: string[];
-  link: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 'school-of-ai',
-    title: 'School of AI',
-    description: 'A global educational movement to teach AI to anyone, anywhere for free.',
-    imageUrl: '/images/project1.jpg',
-    tags: ['Education', 'AI', 'Community'],
-    link: 'https://www.theschool.ai/',
-  },
-  {
-    id: 'quantum-computing',
-    title: 'Quantum Computing Course',
-    description: 'A comprehensive course on quantum computing fundamentals and applications.',
-    imageUrl: '/images/project2.jpg',
-    tags: ['Quantum', 'Education', 'Programming'],
-    link: 'https://github.com/llSourcell/Learn_Quantum_Computing',
-  },
-  {
-    id: 'ai-research',
-    title: 'AI Research Papers',
-    description: 'Explanations and implementations of cutting-edge AI research papers.',
-    imageUrl: '/images/project3.jpg',
-    tags: ['Research', 'Deep Learning', 'Implementation'],
-    link: 'https://github.com/llSourcell',
-  },
-  {
-    id: 'blockchain',
-    title: 'Blockchain Applications',
-    description: 'Exploring the intersection of blockchain technology and artificial intelligence.',
-    imageUrl: '/images/project4.jpg',
-    tags: ['Blockchain', 'Cryptocurrency', 'Web3'],
-    link: 'https://github.com/llSourcell/Simple_Blockchain_in_5_Minutes',
-  },
-  {
-    id: 'ai-startups',
-    title: 'AI Startup Playbook',
-    description: 'A guide for entrepreneurs looking to build AI-powered startups.',
-    imageUrl: '/images/project5.jpg',
-    tags: ['Entrepreneurship', 'Business', 'Strategy'],
-    link: 'https://github.com/llSourcell',
-  },
-  {
-    id: 'neural-networks',
-    title: 'Neural Network Visualizer',
-    description: 'Interactive tool for visualizing and understanding neural networks.',
-    imageUrl: '/images/project6.jpg',
-    tags: ['Visualization', 'Education', 'Interactive'],
-    link: 'https://github.com/llSourcell',
-  },
-];
-
-interface ProjectsProps {
-  className?: string;
-}
-
-const Projects: React.FC<ProjectsProps> = ({ className = '' }) => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
+const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !headingRef.current || !projectsRef.current) return;
+    if (!projectsRef.current || !titleRef.current) return;
 
-    // Animate heading
-    gsap.fromTo(
-      headingRef.current,
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: projectsRef.current,
+        start: 'top 80%',
+      },
+    });
+
+    tl.fromTo(
+      titleRef.current,
       { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom-=100',
-        },
-      }
+      { y: 0, opacity: 1, duration: 0.8 }
+    ).fromTo(
+      '.project-card',
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, stagger: 0.2 },
+      '-=0.4'
     );
 
-    // Animate projects
-    gsap.fromTo(
-      projectsRef.current.children,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.6,
-        scrollTrigger: {
-          trigger: projectsRef.current,
-          start: 'top bottom-=50',
-        },
-      }
-    );
+    return () => {
+      tl.kill();
+    };
   }, []);
 
-  return (
-    <section
-      ref={sectionRef}
-      className={`py-20 ${className}`}
-      id="projects"
-    >
-      <div className="container mx-auto px-4">
-        <h2
-          ref={headingRef}
-          className="text-3xl md:text-4xl font-bold mb-12 text-center"
-        >
-          <span className="text-secondary">Featured</span> Projects
-        </h2>
+  const projects = [
+    {
+      id: 1,
+      title: 'WagerGPT',
+      description: 'AI-powered sports betting assistant with 82% proven win rate. WagerGPT analyzes thousands of data points to predict outcomes and explains its reasoning, helping you make smarter bets.',
+      image: '/images/wager.png',
+      link: 'https://www.wagergpt.xyz',
+      ctaText: 'Start Winning with AI',
+      stats: '1,000+ active users • $2.1M+ total winnings',
+    },
+    {
+      id: 2,
+      title: 'TraderGPT',
+      description: 'No-code AI trading bot that outperforms the market. Create sophisticated algorithmic trading strategies without writing a single line of code. Multi-asset support with real-time AI insights.',
+      image: '/images/trader.png',
+      link: 'https://www.tradergpt.co',
+      ctaText: 'Boost Your Trading',
+      stats: '200+ active traders • Limited spots available',
+    },
+    {
+      id: 3,
+      title: 'The Arena',
+      description: 'Solo-founder AI startup accelerator launching March 2025. Turn your ideas into reality with personalized mentorship, resources, and a community of visionary founders building the future of AI.',
+      image: '/images/arena.png',
+      link: 'https://www.thearena.tech',
+      ctaText: 'Join The Waitlist',
+      stats: 'Exclusive cohort • Applications opening soon',
+    },
+    {
+      id: 4,
+      title: 'YouTube Channel',
+      description: 'Join 700,000+ subscribers learning about AI, machine learning, and the future of technology. Tutorials, interviews with industry leaders, and insights into cutting-edge AI developments.',
+      image: '/images/youtube.png',
+      link: 'https://youtube.com/sirajraval',
+      ctaText: 'Subscribe Now',
+      stats: '700K+ subscribers • 40M+ views',
+    },
+  ];
 
-        <div
-          ref={projectsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+  return (
+    <section ref={projectsRef} className="py-20 bg-background" id="projects">
+      <div className="container mx-auto px-4">
+        <h2 ref={titleRef} className="text-4xl md:text-5xl font-bold mb-12 text-center">
+          AI-Powered <span className="text-primary">Projects</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imageUrl={project.imageUrl}
-              tags={project.tags}
-              link={project.link}
-            />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>

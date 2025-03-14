@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { NextConfig } from 'next';
+
+const config: NextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -12,7 +13,10 @@ const nextConfig = {
         hostname: 'raw.githubusercontent.com',
       },
     ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 };
 
-export default nextConfig;
+export default config;
