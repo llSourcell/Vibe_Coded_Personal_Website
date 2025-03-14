@@ -1,0 +1,17 @@
+{
+  "root": "out",
+  "clean_urls": true,
+  "https_only": true,
+  "headers": {
+    "/**": {
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+    }
+  },
+  "redirects": {
+    "/": {
+      "host": "sirajraval.com",
+      "url": "https://www.sirajraval.com/",
+      "status": 301
+    }
+  }
+} 
