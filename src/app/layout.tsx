@@ -18,6 +18,15 @@ export const metadata: Metadata = {
   keywords: ["Siraj Raval", "AI", "Machine Learning", "Education", "Technology"],
   authors: [{ name: "Siraj Raval" }],
   creator: "Siraj Raval",
+  icons: {
+    icon: [
+      { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' }
+    ],
+    apple: { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
+  },
+  manifest: '/manifest.json',
+  themeColor: '#050510',
 };
 
 export default function RootLayout({
@@ -34,6 +43,10 @@ export default function RootLayout({
             background-color: #050510;
           }
         `}</style>
+        <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon/favicon.svg" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ai-theme`}

@@ -1,0 +1,16 @@
+{
+  "name": "Siraj Raval | AI Educator & Entrepreneur",
+  "short_name": "Siraj Raval",
+  "description": "Personal website of Siraj Raval - AI educator, entrepreneur, and technologist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#050510",
+  "icons": [
+    {
+      "src": "/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+} 
