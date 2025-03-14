@@ -18,18 +18,27 @@ const GameCanvas = ({ className = '' }: GameCanvasProps) => {
       const canvas = document.createElement('canvas');
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      canvas.style.position = 'absolute';
+      canvas.style.position = 'fixed'; // Changed from 'absolute' to 'fixed' for better Safari compatibility
       canvas.style.top = '0';
       canvas.style.left = '0';
       canvas.style.width = '100%';
       canvas.style.height = '100%';
+      canvas.style.zIndex = '-1'; // Ensure it stays behind content
+      
+      // Safari-specific styles
+      canvas.style.transform = 'translateZ(0)'; // Force hardware acceleration
+      canvas.style.backfaceVisibility = 'hidden'; // Prevent flickering in Safari
       
       // Append canvas to the container
       canvasRef.current.appendChild(canvas);
       
       // Get 2D context
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', { alpha: true }); // Explicitly set alpha to true
       if (!ctx) return;
+      
+      // Set background color explicitly for Safari
+      ctx.fillStyle = '#050510'; // Match the --background variable
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       // Create particles
       type Particle = {
@@ -81,8 +90,9 @@ const GameCanvas = ({ className = '' }: GameCanvasProps) => {
       
       // Animation function
       const animate = () => {
-        // Clear canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Clear canvas and redraw background
+        ctx.fillStyle = '#050510'; // Match the --background variable
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
         
         // Update and draw connections
         for (const connection of connections) {
@@ -140,6 +150,10 @@ const GameCanvas = ({ className = '' }: GameCanvasProps) => {
       const handleResize = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+        
+        // Redraw background after resize
+        ctx.fillStyle = '#050510';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
       };
       
       window.addEventListener('resize', handleResize);
@@ -172,7 +186,7 @@ const GameCanvas = ({ className = '' }: GameCanvasProps) => {
     <div className={`relative ${className}`}>
       <div 
         ref={canvasRef} 
-        className="fixed top-0 left-0 w-full h-full z-0"
+        className="fixed top-0 left-0 w-full h-full z-0 bg-background"
         aria-hidden="true"
       />
     </div>

@@ -84,6 +84,14 @@
   }
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -91,11 +99,33 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  /* Safari-specific fixes */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safari-specific background fix */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-color: var(--background) !important;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
 }
 
 .ai-theme {
   background: linear-gradient(135deg, var(--background), #0a0a2a);
   position: relative;
+  /* Force hardware acceleration for Safari */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .ai-theme::before {
@@ -111,6 +141,11 @@ body {
   background-size: var(--grid-size) var(--grid-size);
   pointer-events: none;
   z-index: -1;
+  /* Safari-specific fixes */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .glow-text {
@@ -122,6 +157,7 @@ body {
   border: 1px solid rgba(110, 86, 207, 0.3);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   transition: all 0.3s ease;
 }
 

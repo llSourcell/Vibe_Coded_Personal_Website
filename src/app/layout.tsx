@@ -26,9 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-background">
+      <head>
+        <meta name="theme-color" content="#050510" />
+        <style>{`
+          body {
+            background-color: #050510;
+          }
+        `}</style>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ai-theme`}
+        style={{ backgroundColor: '#050510' }}
       >
         {children}
       </body>
