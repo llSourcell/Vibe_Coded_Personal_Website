@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050510;
+  --foreground: #f0f0ff;
+  --primary: #6e56cf;
+  --secondary: #00c2ff;
+  --accent: #ff00aa;
+  --tertiary: #00ffcc;
+  --neural-blue: #4a9eff;
+  --neural-purple: #9c56ff;
+  --neural-pink: #ff56a9;
+  --neural-green: #56ffa9;
+  --glow-radius: 10px;
+  --glow-intensity: 0.5;
+  --grid-size: 50px;
+  --grid-color: rgba(255, 255, 255, 0.03);
+  --particle-size: 2px;
+  --particle-color: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050510;
+    --foreground: #f0f0ff;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 var(--glow-radius) rgba(var(--neural-blue), var(--glow-intensity));
+  }
+  33% {
+    box-shadow: 0 0 var(--glow-radius) rgba(var(--neural-purple), var(--glow-intensity));
+  }
+  66% {
+    box-shadow: 0 0 var(--glow-radius) rgba(var(--neural-pink), var(--glow-intensity));
+  }
+  100% {
+    box-shadow: 0 0 var(--glow-radius) rgba(var(--neural-blue), var(--glow-intensity));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-theme {
+  background: linear-gradient(135deg, var(--background), #0a0a2a);
+  position: relative;
+}
+
+.ai-theme::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+}
+
+.neural-card {
+  background: rgba(10, 10, 40, 0.7);
+  border: 1px solid rgba(110, 86, 207, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.neural-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(110, 86, 207, 0.5);
+  transform: translateY(-5px);
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulsing {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.glowing {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 40, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
