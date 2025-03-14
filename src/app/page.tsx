@@ -111,7 +111,7 @@ export default function Home() {
               </h2>
               
               <p className="text-xl mb-8">
-                Interested in collaborating on a project or booking me for a speaking engagement? Get in touch!
+                Interested in collaborating on a project or booking me for a speaking engagement? Email me at <a href="mailto:hello@sirajraval.com" className="text-primary hover:underline">hello@sirajraval.com</a> or Get in touch!
               </p>
               
               <form 
