@@ -13,7 +13,7 @@ const navLinks: NavLink[] = [
   { name: 'Home', href: '/', delay: 0 },
   { name: 'About', href: '#about', delay: 0.1 },
   { name: 'Projects', href: '#projects', delay: 0.2 },
-  { name: 'Contact', href: '#contact', delay: 0.3 },
+  { name: 'Contact', href: 'mailto:hello@sirajraval.com', delay: 0.3 },
 ];
 
 const Header: React.FC = () => {

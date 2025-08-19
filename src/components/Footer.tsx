@@ -22,12 +22,12 @@ const Footer = () => {
       className="bg-black/30 backdrop-blur-md border-t border-primary/20 py-12"
     >
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* About */}
           <div className="md:col-span-1">
             <h3 className="text-xl font-bold mb-4">Siraj Raval</h3>
             <p className="text-gray-400 mb-4">
-              AI educator and entrepreneur empowering people with cutting-edge AI tools and knowledge.
+              Senior AI/ML Engineer building reliable, scalable, and trustworthy AI systems. Specializing in MLOps, Generative AI, and Computer Vision.
             </p>
             <div className="flex space-x-4">
               <a
@@ -99,86 +99,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Projects */}
-          <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">Projects</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://www.wagergpt.xyz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  WagerGPT
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.tradergpt.co"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  TraderGPT
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.thearena.tech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  The Arena
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://youtube.com/sirajraval"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary transition-colors"
-                >
-                  YouTube Channel
-                </a>
-              </li>
-            </ul>
-          </div>
+          
 
-          {/* Links */}
-          <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#about" className="text-gray-400 hover:text-primary transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="text-gray-400 hover:text-primary transition-colors">
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/llSourcell" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-gray-400 hover:text-primary transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          
 
           {/* Newsletter */}
           <div className="md:col-span-1">
-            <h3 className="text-xl font-bold mb-4">Join The Arena Waitlist</h3>
+            <h3 className="text-xl font-bold mb-4">Join My Newsletter</h3>
             {isSubmitted ? (
               <div className="bg-primary/20 border border-primary rounded-lg p-4 text-center">
-                <p className="text-white">Thanks for joining! You'll be notified when The Arena launches.</p>
+                <p className="text-white">Thanks for joining! You'll receive updates soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -202,7 +132,7 @@ const Footer = () => {
                   type="submit"
                   className="w-full bg-primary hover:bg-primary/80 text-white font-bold py-2 px-4 rounded-lg transition-colors"
                 >
-                  Join Waitlist
+                  Join Newsletter
                 </button>
               </form>
             )}

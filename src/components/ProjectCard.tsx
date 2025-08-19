@@ -92,7 +92,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       className="project-card bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform perspective-1000 h-full flex flex-col"
     >
       <div 
-        className={`relative h-48 overflow-hidden ${imageError ? `bg-gradient-to-br ${getProjectColor(project.id)}` : ''}`}
+        className={`relative h-56 overflow-hidden ${imageError ? `bg-gradient-to-br ${getProjectColor(project.id)}` : ''}`}
         style={imageError ? { 
           backgroundImage: getPattern(project.id),
           backgroundSize: project.id % 2 === 0 ? '10px 10px' : '100% 100%'
@@ -102,7 +102,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <img 
             src={project.image} 
             alt={project.title}
-            className="w-full h-full object-cover"
+            className={`w-full h-full ${project.title === 'YouTube Channel' ? 'object-contain' : 'object-cover'}`}
+            style={{ 
+              ...(project.title === 'Doctor Dignity' ? { objectPosition: 'center 10%' } : {}),
+              ...(project.title === 'YouTube Channel' ? { transform: 'scale(0.75)', transformOrigin: 'center' } : {}),
+            }}
             onError={() => setImageError(true)}
           />
         )}

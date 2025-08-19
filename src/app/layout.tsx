@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Siraj Raval | AI Educator & Entrepreneur",
-  description: "Personal website of Siraj Raval - AI educator, entrepreneur, and technologist.",
-  keywords: ["Siraj Raval", "AI", "Machine Learning", "Education", "Technology"],
+  title: "Siraj Raval | Senior AI/ML Engineer",
+  description: "Personal website of Siraj Raval - Senior AI/ML Engineer specializing in MLOps, Generative AI, and Computer Vision.",
+  keywords: ["Siraj Raval", "AI", "Machine Learning", "MLOps", "Generative AI", "Computer Vision", "Engineering"],
   authors: [{ name: "Siraj Raval" }],
   creator: "Siraj Raval",
   icons: {
