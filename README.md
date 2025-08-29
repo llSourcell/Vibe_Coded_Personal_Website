@@ -1,15 +1,19 @@
 # Siraj Raval's Personal Website
 
-AI‑themed personal site built with Next.js + TypeScript + Tailwind, featuring animations (GSAP), Pixi.js visuals, a projects grid, and a full‑width client logo bar.
 
-## Getting Started
+## Overview
 
-### Prerequisites
+This is the code for Siraj Raval's personal website. It's live at www.sirajraval.com . It's an AI‑themed personal site built with Next.js + TypeScript + Tailwind, featuring animations (GSAP), Pixi.js visuals, a projects grid, and a full‑width client logo bar. Steal it. Remix it into your own. Or just use the prompts i used to make mine into your own. It's 2025, and it's time to vibe code anything you can imagine. Let's start with your pesonal website. Share it in the comments section of the youtube video! 
 
+### Dependencies
+- Cursor: https://www.cursor.com
+- Claude Code: https://www.anthropic.com/claude
+- Replit: https://replit.com/
+- Vibe Tunnel: https://vibetunnel.sh (or your preferred tunneling tool)
+- WhisperFlow (speech‑to‑text): https://github.com/openai/whisper (or alternatives)
 - Node.js 18+ (or 20.x recommended) and npm
 
 ### Installation
-
 ```bash
 git clone https://github.com/llSourcell/Vibe_Coded_Personal_Website.git
 cd Vibe_Coded_Personal_Website
@@ -19,28 +23,7 @@ npm run dev
 # open http://localhost:3000
 ```
 
-## Customize
-- Hero/CTAs: `src/components/Hero.tsx`
-- Projects: `src/components/Projects.tsx`
-- Footer/newsletter: `src/components/Footer.tsx`
-- Logos & images: `public/logos/`, `public/images/`
-- Metadata: `src/app/layout.tsx`
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## System Prompt
-
-This project ships with my system prompt used while building and iterating in Cursor. You can find it here:
-
-- `SYSTEM_PROMPT.md`
-
-## About the Video (Vibe Coding)
-
-This website was built during a video where I demonstrate “vibe coding” — Plan, Prompt, and Polish — to go from zero to a live site rapidly using modern AI coding tools. The README reflects that workflow, and the system prompt above captures the rules and conventions I used while iterating with AI assistants.
-
-## Deploy Your Own (Vibe Coding)
+## Instructions
 
 Two easy paths:
 
@@ -81,12 +64,5 @@ Personalization variables to apply:
 - Projects: <title, image link, description, target URL, CTA text>
 ```
 
-### Video (Context)
-“Vibe Coding” in 15 minutes: the 3 P’s (Plan → Prompt → Polish), the Vibe Loop™ (Prompt → Run → Break → Fix → Repeat), GPT‑5 vs Claude vs Gemini head‑to‑head, and going from blank screen to live site fast. Drop your vibe‑coded site link in the comments!
+## MIT LICENSE
 
-### Tools (links)
-- Cursor: https://www.cursor.com
-- Claude Code: https://www.anthropic.com/claude
-- Replit: https://replit.com/
-- Vibe Tunnel: https://vibetunnel.sh (or your preferred tunneling tool)
-- WhisperFlow (speech‑to‑text): https://github.com/openai/whisper (or alternatives)
