@@ -88,3 +88,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Siraj Raval for the inspiration
 - The Next.js, Pixi.js, and GSAP communities for their excellent documentation and examples
+
+## System Prompt
+
+This project ships with my system prompt used while building and iterating in Cursor. You can find it here:
+
+- `SYSTEM_PROMPT.md`
+
+## About the Video (Vibe Coding)
+
+This website was built during a video where I demonstrate “vibe coding” — Plan, Prompt, and Polish — to go from zero to a live site rapidly using modern AI coding tools. The README reflects that workflow, and the system prompt above captures the rules and conventions I used while iterating with AI assistants.
