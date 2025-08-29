@@ -1,93 +1,34 @@
 # Siraj Raval's Personal Website
 
-An interactive, AI-themed personal website for Siraj Raval, featuring stunning animations and game-like elements.
-
-## Features
-
-- Interactive neural network visualization
-- Game-like elements with Pixi.js
-- Beautiful animations with GSAP
-- Responsive design for all devices
-- AI-themed visual aesthetics
-
-## Technologies Used
-
-- **Next.js**: React framework for server-rendered applications
-- **TypeScript**: For type-safe code
-- **Pixi.js**: For 2D WebGL rendering and interactive elements
-- **GSAP**: For advanced animations
-- **TailwindCSS**: For utility-first styling
-
-## Interactive Elements
-
-The website features several interactive elements:
-
-1. **Neural Network Background**: An interactive neural network visualization that responds to user interaction.
-2. **Neural Nodes**: Clickable nodes that create ripple effects and increase your neural connection score.
-3. **Animated Connections**: Dynamic connections between neural nodes that pulse and animate.
-4. **Hover Effects**: Interactive hover effects on project cards and navigation elements.
+AI‑themed personal site built with Next.js + TypeScript + Tailwind, featuring animations (GSAP), Pixi.js visuals, a projects grid, and a full‑width client logo bar.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 18+ (or 20.x recommended) and npm
 
 ### Installation
 
-1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/siraj-raval-website.git
-cd siraj-raval-website
-```
-
-2. Install dependencies
-```bash
+git clone https://github.com/llSourcell/Vibe_Coded_Personal_Website.git
+cd Vibe_Coded_Personal_Website
+nvm use 20 || nvm install 20 && nvm use 20
 npm install
-```
-
-3. Run the development server
-```bash
 npm run dev
+# open http://localhost:3000
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## Project Structure
-
-```
-├── public/             # Static assets
-│   └── images/         # Image assets
-├── src/                # Source code
-│   ├── app/            # Next.js app directory
-│   ├── components/     # React components
-│   ├── game/           # Game-related components and logic
-│   │   ├── scenes/     # Game scenes
-│   │   ├── entities/   # Game entities
-│   │   └── systems/    # Game systems
-│   ├── hooks/          # Custom React hooks
-│   ├── types/          # TypeScript type definitions
-│   └── utils/          # Utility functions
-├── tailwind.config.js  # Tailwind CSS configuration
-└── tsconfig.json       # TypeScript configuration
-```
-
-## Performance Optimizations
-
-- Dynamic imports for heavy components
-- Optimized animations with GSAP
-- Efficient rendering with Pixi.js
-- Responsive design for all devices
-- Lazy loading of images and components
+## Customize
+- Hero/CTAs: `src/components/Hero.tsx`
+- Projects: `src/components/Projects.tsx`
+- Footer/newsletter: `src/components/Footer.tsx`
+- Logos & images: `public/logos/`, `public/images/`
+- Metadata: `src/app/layout.tsx`
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Siraj Raval for the inspiration
-- The Next.js, Pixi.js, and GSAP communities for their excellent documentation and examples
 
 ## System Prompt
 
@@ -107,26 +48,9 @@ Two easy paths:
 - Prompt-from-scratch (pure vibe coding): rebuild via prompts in Cursor/Claude Code
 
 ### Option A — Use this repo as a base template
-1) Fork this repo to your GitHub account
-2) Clone locally and run
-
-```bash
-git clone https://github.com/<your-username>/Vibe_Coded_Personal_Website.git
-cd Vibe_Coded_Personal_Website
-nvm use 20 || nvm install 20 && nvm use 20
-npm install
-npm run dev
-```
-
-3) Customize
-- Edit copy in `src/components/Hero.tsx` and `src/components/Footer.tsx`
-- Replace project cards in `src/components/Projects.tsx`
-- Swap logos in `public/logos/` and images in `public/images/`
-- Tweak metadata in `src/app/layout.tsx`
-
-4) Deploy
-- Vercel: import the repo and deploy (zero-config for Next.js)
-- Heroku: push to Heroku (Node + nginx buildpack already configured)
+1) Fork → clone → run the Quickstart above
+2) Customize files listed in “Customize”
+3) Deploy: Vercel (recommended) or Heroku (Node + nginx buildpack)
 
 ### Option B — Rebuild via prompts (pure vibe coding)
 Open Cursor or Claude Code and use one of these prompts.
@@ -157,12 +81,8 @@ Personalization variables to apply:
 - Projects: <title, image link, description, target URL, CTA text>
 ```
 
-### Video Description (Context)
-I built a website in 5 minutes using only AI (no typing, no coding). I forced GPT‑5, Claude, and Gemini into a showdown. The winner shocked me. In this video, I reveal the clear winner and teach you the fundamentals of Vibe Coding™—how to build anything you can imagine just by prompting.
-
-What you’ll learn in 15 minutes: the 3 P’s (Plan → Prompt → Polish), the Vibe Loop™ (Prompt → Run → Break → Fix → Repeat), a head‑to‑head comparison (GPT‑5 vs Claude vs Gemini), and how to go from blank screen to a live site on your phone.
-
-Drop your vibe‑coded website link in the comments — I’ll be checking them out!
+### Video (Context)
+“Vibe Coding” in 15 minutes: the 3 P’s (Plan → Prompt → Polish), the Vibe Loop™ (Prompt → Run → Break → Fix → Repeat), GPT‑5 vs Claude vs Gemini head‑to‑head, and going from blank screen to live site fast. Drop your vibe‑coded site link in the comments!
 
 ### Tools (links)
 - Cursor: https://www.cursor.com
