@@ -157,12 +157,6 @@ Personalization variables to apply:
 - Projects: <title, image link, description, target URL, CTA text>
 ```
 
-### Video Description (Context)
-I built a website in 5 minutes using only AI (no typing, no coding). I forced GPT‑5, Claude, and Gemini into a showdown. The winner shocked me. In this video, I reveal the clear winner and teach you the fundamentals of Vibe Coding™—how to build anything you can imagine just by prompting.
-
-What you’ll learn in 15 minutes: the 3 P’s (Plan → Prompt → Polish), the Vibe Loop™ (Prompt → Run → Break → Fix → Repeat), a head‑to‑head comparison (GPT‑5 vs Claude vs Gemini), and how to go from blank screen to a live site on your phone.
-
-Drop your vibe‑coded website link in the comments — I’ll be checking them out!
 
 ### Tools (links)
 - Cursor: https://www.cursor.com
